@@ -1,10 +1,10 @@
-pluginManagement {
-    repositories {
-        google()
-        mavenCentral()
-        gradlePluginPortal()
-    }
-}
+//pluginManagement {
+//    repositories {
+//        google()
+//        mavenCentral()
+//        gradlePluginPortal()
+//    }
+//}
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
@@ -14,6 +14,6 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "MultiModuleBaseProject"
-include(":presentation")
+include(":app")
 include(":domain")
 include(":data")
