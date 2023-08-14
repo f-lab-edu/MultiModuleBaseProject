@@ -12,6 +12,13 @@ object Dep{
         const val fragment = "androidx.fragment:fragment-ktx:1.6.1"
     }
 
+    val androidList = listOf(
+        "androidx.core:core-ktx:1.10.1",
+        "androidx.appcompat:appcompat:1.6.1",
+        "androidx.activity:activity-ktx:1.7.2",
+        "androidx.fragment:fragment-ktx:1.6.1"
+    )
+
     object LifeCycle{
         private const val lifecycleVersion = "2.6.1"
 
@@ -59,6 +66,10 @@ object Dep{
             "androidx.navigation:navigation-compose:2.7.0",
             "androidx.hilt:hilt-navigation-compose:1.0.0",
             "androidx.compose.material3:material3-android:1.2.0-alpha05",
+            "androidx.activity:activity-compose:1.7.2",
+            "androidx.lifecycle:lifecycle-runtime-compose:2.6.1",
+            "androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1",
+            "androidx.compose.runtime:runtime-livedata:1.5.0",
         )
 
     }

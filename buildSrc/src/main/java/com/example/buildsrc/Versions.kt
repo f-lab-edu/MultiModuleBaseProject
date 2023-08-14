@@ -9,5 +9,7 @@ object Versions {
     const val compileSdk = 33
     const val jvmTarget = "11"
 
+    const val versionCode = 0
+    const val versionName = "0.0.0"
     val javaVersion = JavaVersion.VERSION_11
 }
