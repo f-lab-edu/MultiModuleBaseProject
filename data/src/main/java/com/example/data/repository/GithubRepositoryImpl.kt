@@ -10,9 +10,9 @@ import javax.inject.Inject
 import javax.inject.Named
 
 class GithubRepositoryImpl @Inject constructor(
-    @Named("Github_Api")
+    @Named("githubApi")
     val githubAPI: GithubAPI,
-) :GithubRepository{
+) : GithubRepository {
     override suspend fun githubAccessTokenRequest(githubAccessTokenRequest: GithubAccessTokenRequest): GithubAccessTokenResponse {
         return githubAPI.getAccessToken(githubAccessTokenRequest.toData()).toDomain()
     }
