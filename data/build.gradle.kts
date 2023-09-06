@@ -12,9 +12,11 @@ android {
 }
 
 dependencies {
+    implementation(project(com.example.buildsrc.Project.domain))
 
     implementation(Dep.Hilt.hilt)
     kapt(Dep.Hilt.compiler)
 
     Dep.Retrofit.RetrofitList.forEach(::implementation)
+    implementation(Dep.Google.gson)
 }

@@ -74,6 +74,9 @@ object Dep{
 
     }
 
+    object Google{
+        const val gson = "com.google.code.gson:gson:2.8.6"
+    }
     object Hilt{
         private const val hiltVersion = "2.47"
 
