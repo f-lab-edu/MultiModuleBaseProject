@@ -4,6 +4,10 @@ import com.example.data.api.GithubAPI
 import com.example.data.repository.GithubRepositoryImpl
 import com.example.domain.repository.GithubRepository
 import com.example.data.api.EndPoint.githubEndpoint
+import com.example.data.api.EndPoint.openWeatherEndPoint
+import com.example.data.api.OpenWeatherAPI
+import com.example.data.repository.OpenWeatherRepositoryImpl
+import com.example.domain.repository.OpenWeatherRepository
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -27,6 +31,10 @@ internal abstract class DataModule {
     @Binds
     abstract fun bindGithubRepository(repo: GithubRepositoryImpl): GithubRepository
 
+    @Binds
+    abstract fun bindOpenWeatherRepository(repo: OpenWeatherRepositoryImpl): OpenWeatherRepository
+
+
     @InstallIn(SingletonComponent::class)
     @Module
     internal object ApiModule {
@@ -40,6 +48,17 @@ internal abstract class DataModule {
                 client = okHttpClient,
                 cls = GithubAPI::class.java
             ) as GithubAPI
+        }
+
+        @Provides
+        @Singleton
+        @Named("openWeatherApi")
+        fun provideOpenWeatherApi(okHttpClient: OkHttpClient): OpenWeatherAPI {
+            return createApi(
+                url = openWeatherEndPoint,
+                client = okHttpClient,
+                cls = OpenWeatherAPI::class.java
+            ) as OpenWeatherAPI
         }
 
         /**
