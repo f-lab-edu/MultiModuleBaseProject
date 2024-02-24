@@ -1,4 +1,5 @@
 import com.example.buildsrc.Dep
+import com.example.buildsrc.Project
 
 plugins {
     id("com.android.library")
@@ -10,10 +11,13 @@ plugins {
 
 android {
     namespace = "com.example.data"
+    compileSdk = com.example.buildsrc.Versions.compileSdk
 }
-
+kotlin {
+    jvmToolchain(17)
+}
 dependencies {
-    implementation(project(com.example.buildsrc.Project.domain))
+    implementation(project(Project.domain))
 
     implementation(Dep.Kotlin.serializationJson)
 

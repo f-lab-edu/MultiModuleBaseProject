@@ -1,4 +1,5 @@
 import com.example.buildsrc.Dep
+
 plugins {
     id("com.android.library")
     kotlin("android")
@@ -9,6 +10,10 @@ plugins {
 
 android {
     namespace = "com.example.domain"
+    compileSdk = com.example.buildsrc.Versions.compileSdk
+}
+kotlin {
+    jvmToolchain(17)
 }
 
 dependencies {

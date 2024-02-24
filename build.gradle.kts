@@ -9,8 +9,8 @@ plugins {
     kotlin("plugin.serialization") version "1.9.0" apply false
 }
 
-buildscript{
-    repositories{
+buildscript {
+    repositories {
         google()
         mavenCentral()
         gradlePluginPortal()
@@ -24,13 +24,9 @@ buildscript{
         classpath(com.example.buildsrc.Dep.Hilt.plugin)
     }
 }
-//
+
 //subprojects {
 //    afterEvaluate {
 //        project.apply("$rootDir/gradle/common.gradle")
 //    }
-//}
-//
-//tasks.register("clean", Delete::class) {
-//    delete(rootProject.buildDir)
 //}
