@@ -4,6 +4,7 @@ plugins {
     kotlin("android")
     kotlin("kapt")
     id("dagger.hilt.android.plugin")
+    kotlin("plugin.serialization")
 }
 
 android {
@@ -13,7 +14,7 @@ android {
 dependencies {
     implementation(Dep.Hilt.hilt)
     kapt(Dep.Hilt.compiler)
-
+    implementation(Dep.Kotlin.serializationJson)
     Dep.Kotlin.CoroutineList.forEach(::implementation)
     Dep.Retrofit.RetrofitList.forEach(::implementation)
 }

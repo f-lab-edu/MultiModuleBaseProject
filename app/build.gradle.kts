@@ -56,14 +56,15 @@ android {
 }
 
 dependencies {
-//    implementation(project(Project.data))
-//    implementation(project(Project.domain))
+    implementation(project(Project.data))
+    implementation(project(Project.domain))
 
     Dep.androidList.forEach(::implementation)
     Dep.LifeCycle.LifeCycleList.forEach(::implementation)
     Dep.Compose.ComposeList.forEach(::implementation)
 
     implementation(Dep.Kotlin.stdlib)
+
     Dep.Kotlin.CoroutineList.forEach(::implementation)
     implementation(Dep.Hilt.hilt)
     kapt(Dep.Hilt.compiler)

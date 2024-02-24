@@ -35,6 +35,7 @@ object Dep{
 
         const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
         const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
+        const val serializationJson = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0"
 
         val CoroutineList = listOf(
             "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion",

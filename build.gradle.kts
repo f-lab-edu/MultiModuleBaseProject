@@ -4,6 +4,10 @@
 //    id("org.jetbrains.kotlin.android") version "1.8.10" apply false
 //    id("com.android.library") version "8.1.0" apply false
 //}
+plugins {
+    kotlin("jvm") version "1.9.0"
+    kotlin("plugin.serialization") version "1.9.0" apply false
+}
 
 buildscript{
     repositories{
@@ -13,7 +17,7 @@ buildscript{
         maven(url = "https/jitpack.io")
     }
 
-    dependencies{
+    dependencies {
         classpath(com.example.buildsrc.Dep.androidGradlePlugin)
         classpath(com.example.buildsrc.Dep.androidGradleApiPlugin)
         classpath(com.example.buildsrc.Dep.Kotlin.gradlePlugin)
