@@ -38,7 +38,7 @@ internal object NetworkModule {
      * fail : "apiError"
      * error : "apiException"
      *
-     * @since 0.0
+     * since 0.0
      */
     @Provides
     @Singleton
@@ -64,4 +64,5 @@ internal object NetworkModule {
         HttpLoggingInterceptor(logger).apply {
             level = HttpLoggingInterceptor.Level.BODY
         }
+
 }

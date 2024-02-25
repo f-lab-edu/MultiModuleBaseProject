@@ -7,7 +7,7 @@ import com.example.domain.repository.OpenWeatherRepository
 import javax.inject.Inject
 import javax.inject.Named
 class OpenWeatherRepositoryImpl @Inject constructor(
-    @Named("API_OPEN_WEATHER")
+    @Named("openWeatherApi")
     private val api: OpenWeatherAPI
 ) : OpenWeatherRepository {
 

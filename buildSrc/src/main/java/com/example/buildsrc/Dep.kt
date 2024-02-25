@@ -30,7 +30,7 @@ object Dep{
     }
 
     object Kotlin{
-        private const val kotlinVersion = "1.9.0"
+        private const val kotlinVersion = "1.8.0"
         private const val coroutineVersion = "1.7.3"
 
         const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
@@ -79,10 +79,10 @@ object Dep{
         const val gson = "com.google.code.gson:gson:2.8.6"
     }
     object Hilt{
-        private const val hiltVersion = "2.47"
+        private const val hiltVersion = "2.50"
 
         const val hilt = "com.google.dagger:hilt-android:$hiltVersion"
         const val compiler = "com.google.dagger:hilt-android-compiler:$hiltVersion"
-        const val plugin = "com.google.dagger:hilt-android-gradle-plugin:2.42"
+        const val plugin = "com.google.dagger:hilt-android-gradle-plugin:$hiltVersion"
     }
 }

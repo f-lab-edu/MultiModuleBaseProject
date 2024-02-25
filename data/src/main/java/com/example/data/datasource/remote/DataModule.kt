@@ -34,7 +34,6 @@ internal abstract class DataModule {
     @Binds
     abstract fun bindOpenWeatherRepository(repo: OpenWeatherRepositoryImpl): OpenWeatherRepository
 
-
     @InstallIn(SingletonComponent::class)
     @Module
     internal object ApiModule {
@@ -50,8 +49,8 @@ internal abstract class DataModule {
             ) as GithubAPI
         }
 
-        @Provides
         @Singleton
+        @Provides
         @Named("openWeatherApi")
         fun provideOpenWeatherApi(okHttpClient: OkHttpClient): OpenWeatherAPI {
             return createApi(
@@ -63,8 +62,8 @@ internal abstract class DataModule {
 
         /**
          * @param url BaseUrl 값
+         * @param client OkhttpClient
          * @param cls Service Interface
-         *
          * @since 0.0
          */
         private fun createApi(
