@@ -26,6 +26,12 @@ internal object NetworkModule {
         httpLoggingInterceptor: HttpLoggingInterceptor,
     ): OkHttpClient =
         OkHttpClient.Builder()
+            // TODO. default 를 사용하지 않는 이유가 궁금. 명확한 이유가 없다면 굳이?
+            /**
+             * connectTimeout = 10_000;
+             * readTimeout = 10_000;
+             * writeTimeout = 10_000;
+             */
             .connectTimeout(1, TimeUnit.MINUTES)
             .readTimeout(30, TimeUnit.SECONDS)
             .writeTimeout(20, TimeUnit.SECONDS)
@@ -44,6 +50,8 @@ internal object NetworkModule {
     @Singleton
     fun provideLogger(): HttpLoggingInterceptor.Logger =
         HttpLoggingInterceptor.Logger { message ->
+            // TODO. timber 를 사용해보자.
+            // TODO. 더 나아가 Network tracking tool인 stetho or flipper 를 사용해보자.
             if (message.startsWith("{") || message.startsWith("[")) {
                 try {
                     val prettyPrintJson = GsonBuilder().setPrettyPrinting()

@@ -1,5 +1,6 @@
 package com.example.domain.usecase.utils
 
+// TODO abstract class 로 변경하면? abstract class vs sealed class
 sealed class Result <out R> {
 
     data class Success<out T>(val data: T) : Result<T>()

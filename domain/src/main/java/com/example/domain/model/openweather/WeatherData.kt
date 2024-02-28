@@ -4,6 +4,7 @@ package com.example.domain.model.openweather
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
+// TODO. 서버에서 null로 주면 어떻게 되나? 해결할려면? Primitive Type vs Reference Type
 @Serializable
 data class WeatherData(
     @SerialName("main")

@@ -5,6 +5,7 @@ import com.example.domain.model.openweather.WeatherData
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
+// TODO response data class는 일반적으로 DTO로 쓰이지 않나? 굳이 또 붙여줘야하나? VO 나 DAO 도 네이밍을 붙이나? 안 붙일꺼면 DTO도 빼자.
 @Serializable
 data class WeatherResponseDTO(
     @SerialName("base")

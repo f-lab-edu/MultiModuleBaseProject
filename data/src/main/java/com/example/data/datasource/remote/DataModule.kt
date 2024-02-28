@@ -28,6 +28,11 @@ import javax.inject.Singleton
 @Module(includes = [DataModule.ApiModule::class])
 internal abstract class DataModule {
 
+    // TODO interface를 잘 만드셨는데 왜 파라미터 type 으로 Impl? 캡슐화에 대해 공부 필요.
+    // TODO. Present layer -> (Domain layer) -> data layer 이렇게 의존성을 가져야하지 않나? 약간 짬뽕구조
+    // https://velog.io/@sery270/Android의-Clean-Architecture에-대해-알아보자-n9ihbaj4
+    // https://developer.android.com/topic/architecture/domain-layer?hl=ko
+    // Domain layer 는 옵셔널 https://developer.android.com/topic/architecture/recommendations?hl=ko
     @Binds
     abstract fun bindGithubRepository(repo: GithubRepositoryImpl): GithubRepository
 
@@ -41,12 +46,18 @@ internal abstract class DataModule {
         @Provides
         @Singleton
         @Named("githubApi")
+        // TODO. OkHttpClient 가 그때 그때 변화를 하나? 따로 파라미터를 받는 이유는?
         fun provideGithubApi(okHttpClient: OkHttpClient): GithubAPI {
             return createApi(
                 url = githubEndpoint,
                 client = okHttpClient,
-                cls = GithubAPI::class.java
-            ) as GithubAPI
+            )
+
+//            return createApi(
+//                url = githubEndpoint,
+//                client = okHttpClient,
+//                cls = GithubAPI::class.java
+//            ) as GithubAPI
         }
 
         @Singleton
@@ -56,10 +67,17 @@ internal abstract class DataModule {
             return createApi(
                 url = openWeatherEndPoint,
                 client = okHttpClient,
-                cls = OpenWeatherAPI::class.java
-            ) as OpenWeatherAPI
+            )
+
+//            return createApi(
+//                url = openWeatherEndPoint,
+//                client = okHttpClient,
+//                cls = OpenWeatherAPI::class.java
+//            ) as OpenWeatherAPI
         }
 
+
+        // TODO. Generic 을 사용. inline function 을 사용
         /**
          * @param url BaseUrl 값
          * @param client OkhttpClient
@@ -77,6 +95,18 @@ internal abstract class DataModule {
                 .client(client)
                 .build()
                 .create(cls)
+        }
+
+        private inline fun <reified T : Any> createApi(
+            url: String,
+            client: OkHttpClient,
+        ): T {
+            return Retrofit.Builder()
+                .baseUrl(url)
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(client)
+                .build()
+                .create(T::class.java)
         }
     }
 }
