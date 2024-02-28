@@ -10,6 +10,9 @@ sealed class Result <out R> {
 val Result<*>.Success
     get() = this is Result.Success && data != null
 
+val <T> Result<T>.response: T?
+    get() = (this as? Result.Success)?.data
+
 val <T> Result<T>.Error: Throwable?
     get() = (this as? Result.Error)?.exception
 

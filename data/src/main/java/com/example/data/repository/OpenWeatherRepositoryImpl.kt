@@ -12,6 +12,6 @@ class OpenWeatherRepositoryImpl @Inject constructor(
 ) : OpenWeatherRepository {
 
     override suspend fun fetchWeatherByCity(city: String): WeatherData {
-        return api.fetchWeatherByCountry(city,"BuildConfig.openWeatherKey").toDomain()
+        return api.fetchWeatherByCountry(city,"d72ec7b7f710ae389c624e2aa88d2882").toDomain()
     }
 }
