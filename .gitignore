@@ -1,7 +1,6 @@
 *.iml
 .gradle
 /local.properties
-# TODO. ignore 추가 
 /.idea/*
 .DS_Store
 /build

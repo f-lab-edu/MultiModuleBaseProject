@@ -17,7 +17,6 @@ kotlin {
 }
 
 dependencies {
-    // TODO. hilt를 쓰는 이유는?
     implementation(Dep.Hilt.hilt)
     kapt(Dep.Hilt.compiler)
     implementation(Dep.Kotlin.serializationJson)
