@@ -1,4 +1,4 @@
-package com.example.presentation.weather.firstScreen
+package com.example.presentation.weather.weatherScreen
 
 data class WeatherUIModel(
     val main: Main,

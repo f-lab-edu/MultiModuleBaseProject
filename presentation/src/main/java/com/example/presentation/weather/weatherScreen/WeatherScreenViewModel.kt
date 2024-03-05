@@ -1,4 +1,4 @@
-package com.example.presentation.weather.firstScreen
+package com.example.presentation.weather.weatherScreen
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
@@ -8,13 +8,9 @@ import com.example.domain.usecase.openweather.FetchWeatherByCityUseCase
 import com.example.presentation.utils.executeResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.SharedFlow
-import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import javax.inject.Inject
 import kotlin.math.roundToInt
 

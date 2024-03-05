@@ -60,7 +60,7 @@ dependencies {
     implementation(project(Project.domain))
 
     Dep.androidList.forEach(::implementation)
-
+    Dep.Compose.ComposeList.forEach(::implementation)
     implementation(Dep.Hilt.hilt)
     kapt(Dep.Hilt.compiler)
 
