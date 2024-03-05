@@ -17,3 +17,4 @@ rootProject.name = "MultiModuleBaseProject"
 include(":app")
 include(":domain")
 include(":data")
+include(":presentation")
