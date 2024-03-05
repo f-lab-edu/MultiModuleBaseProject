@@ -1,4 +1,4 @@
-package com.example.multimodulebaseproject.firstScreen
+package com.example.presentation.weather.firstScreen
 
 import android.util.Log
 import androidx.compose.foundation.layout.Column

@@ -1,4 +1,4 @@
-package com.example.multimodulebaseproject.ui.theme
+package com.example.presentation.weather.theme
 
 import android.app.Activity
 import android.os.Build

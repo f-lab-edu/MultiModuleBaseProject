@@ -1,4 +1,4 @@
-package com.example.multimodulebaseproject.utils
+package com.example.presentation.utils
 
 import com.example.domain.usecase.utils.Error
 import com.example.domain.usecase.utils.Result

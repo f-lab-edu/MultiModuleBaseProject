@@ -1,11 +1,11 @@
-package com.example.multimodulebaseproject.firstScreen
+package com.example.presentation.weather.firstScreen
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.domain.model.openweather.WeatherData
 import com.example.domain.usecase.openweather.FetchWeatherByCityUseCase
-import com.example.multimodulebaseproject.utils.executeResult
+import com.example.presentation.utils.executeResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableSharedFlow

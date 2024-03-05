@@ -1,4 +1,4 @@
-package com.example.multimodulebaseproject.firstScreen
+package com.example.presentation.weather.firstScreen
 
 import android.os.Bundle
 import android.os.PersistableBundle
@@ -6,7 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.example.multimodulebaseproject.ui.theme.MultiModuleBaseProjectTheme
+import com.example.presentation.weather.theme.MultiModuleBaseProjectTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

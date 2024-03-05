@@ -1,11 +1,11 @@
-package com.example.multimodulebaseproject.firstScreen
+package com.example.presentation.weather.firstScreen
 
 data class WeatherUIModel(
-    val main: WeatherUIModel.Main,
+    val main: Main,
 
     val name: String,
 
-    val weather: List<WeatherUIModel.Weather>,
+    val weather: List<Weather>,
 ) {
     data class Main(
         val humidity: Int, // 습도
