@@ -1,11 +1,11 @@
 package com.example.data.datasource.remote
 
 import com.example.data.api.GithubAPI
-import com.example.data.repository.GithubRepositoryImpl
-import com.example.domain.repository.GithubRepository
+//import com.example.data.repository.GithubRepositoryImpl
+//import com.example.data.repository.GithubRepository
 import com.example.data.api.OpenWeatherAPI
 import com.example.data.repository.OpenWeatherRepositoryImpl
-import com.example.domain.repository.OpenWeatherRepository
+import com.example.data.repository.OpenWeatherRepository
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -31,8 +31,8 @@ internal abstract class DataModule {
     // https://velog.io/@sery270/Android의-Clean-Architecture에-대해-알아보자-n9ihbaj4
     // https://developer.android.com/topic/architecture/domain-layer?hl=ko
     // Domain layer 는 옵셔널 https://developer.android.com/topic/architecture/recommendations?hl=ko
-    @Binds
-    abstract fun bindGithubRepository(repo: GithubRepositoryImpl): GithubRepository
+//    @Binds
+//    abstract fun bindGithubRepository(repo: GithubRepositoryImpl): GithubRepository
 
     @Binds
     abstract fun bindOpenWeatherRepository(repo: OpenWeatherRepositoryImpl): OpenWeatherRepository

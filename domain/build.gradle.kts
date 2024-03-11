@@ -17,6 +17,7 @@ kotlin {
 }
 
 dependencies {
+    implementation(project(com.example.buildsrc.Project.data))
     implementation(Dep.Hilt.hilt)
     kapt(Dep.Hilt.compiler)
     implementation(Dep.Kotlin.serializationJson)

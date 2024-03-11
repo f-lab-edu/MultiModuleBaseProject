@@ -1,7 +1,7 @@
 package com.example.data.model.github
 
-import com.example.domain.model.github.GithubAccessTokenResponse as responseDomain
-import com.example.data.model.github.GithubAccessTokenResponse as responseData
+//import com.example.domain.model.github.GithubAccessTokenResponse as responseDomain
+//import com.example.data.model.github.GithubAccessTokenResponse as responseData
 import com.google.gson.annotations.SerializedName
 
 data class GithubAccessTokenResponse(
@@ -15,8 +15,8 @@ data class GithubAccessTokenResponse(
     val scope: String
 )
 
-internal fun responseData.toDomain() = responseDomain(
-    accessToken = accessToken,
-    tokenType = tokenType,
-    scope = scope
-)
+//internal fun responseData.toDomain() = responseDomain(
+//    accessToken = accessToken,
+//    tokenType = tokenType,
+//    scope = scope
+//)

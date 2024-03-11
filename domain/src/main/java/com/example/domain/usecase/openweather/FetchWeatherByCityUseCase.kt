@@ -1,7 +1,7 @@
 package com.example.domain.usecase.openweather
 
 import com.example.domain.model.openweather.WeatherData
-import com.example.domain.repository.OpenWeatherRepository
+import com.example.data.repository.OpenWeatherRepository
 import com.example.domain.usecase.utils.UseCase
 import javax.inject.Inject
 

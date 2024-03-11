@@ -17,7 +17,6 @@ kotlin {
     jvmToolchain(17)
 }
 dependencies {
-    implementation(project(Project.domain))
 
     implementation(Dep.Kotlin.serializationJson)
 
