@@ -10,9 +10,12 @@ android {
     namespace = "com.example.presentation"
     compileSdk = Versions.compileSdk
 
+    defaultConfig{
+        minSdk = Versions.minSdk
+    }
     buildFeatures {
         compose = true
-
+        dataBinding = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.0"
@@ -27,6 +30,9 @@ kotlin {
 dependencies {
 
     implementation(project(com.example.buildsrc.Project.domain))
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("com.google.android.material:material:1.9.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 
     Dep.androidList.forEach(::implementation)
     Dep.LifeCycle.LifeCycleList.forEach(::implementation)
