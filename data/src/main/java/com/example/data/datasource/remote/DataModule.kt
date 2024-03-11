@@ -94,10 +94,7 @@ internal abstract class DataModule {
 //                .build()
 //                .create(cls)
 //        }
-//
-//        private inline fun <reified T> createApi2(url: String,client: OkHttpClient) :T {
-//            return Retrofit.Builder().baseUrl(url).addConverterFactory(GsonConverterFactory.create()).client(client).build().create(T::class.java)
-//        }
+
 
         private inline fun <reified T : Any> createApi(
             url: String,
