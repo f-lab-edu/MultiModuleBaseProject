@@ -1,13 +1,11 @@
 package com.example.data.datasource.remote
 
 import com.example.data.api.GithubAPI
-import com.example.data.repository.GithubRepositoryImpl
-import com.example.domain.repository.GithubRepository
-import com.example.data.api.EndPoint.githubEndpoint
-import com.example.data.api.EndPoint.openWeatherEndPoint
+//import com.example.data.repository.GithubRepositoryImpl
+//import com.example.data.repository.GithubRepository
 import com.example.data.api.OpenWeatherAPI
 import com.example.data.repository.OpenWeatherRepositoryImpl
-import com.example.domain.repository.OpenWeatherRepository
+import com.example.data.repository.OpenWeatherRepository
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -33,8 +31,8 @@ internal abstract class DataModule {
     // https://velog.io/@sery270/Android의-Clean-Architecture에-대해-알아보자-n9ihbaj4
     // https://developer.android.com/topic/architecture/domain-layer?hl=ko
     // Domain layer 는 옵셔널 https://developer.android.com/topic/architecture/recommendations?hl=ko
-    @Binds
-    abstract fun bindGithubRepository(repo: GithubRepositoryImpl): GithubRepository
+//    @Binds
+//    abstract fun bindGithubRepository(repo: GithubRepositoryImpl): GithubRepository
 
     @Binds
     abstract fun bindOpenWeatherRepository(repo: OpenWeatherRepositoryImpl): OpenWeatherRepository
@@ -49,7 +47,7 @@ internal abstract class DataModule {
         // TODO. OkHttpClient 가 그때 그때 변화를 하나? 따로 파라미터를 받는 이유는?
         fun provideGithubApi(okHttpClient: OkHttpClient): GithubAPI {
             return createApi(
-                url = githubEndpoint,
+                url = "https://api.github.com",
                 client = okHttpClient,
             )
 
@@ -65,7 +63,7 @@ internal abstract class DataModule {
         @Named("openWeatherApi")
         fun provideOpenWeatherApi(okHttpClient: OkHttpClient): OpenWeatherAPI {
             return createApi(
-                url = openWeatherEndPoint,
+                url = "https://api.openweathermap.org",
                 client = okHttpClient,
             )
 
@@ -81,21 +79,22 @@ internal abstract class DataModule {
         /**
          * @param url BaseUrl 값
          * @param client OkhttpClient
-         * @param cls Service Interface
+//         * @param cls Service Interface
          * @since 0.0
          */
-        private fun createApi(
-            url: String,
-            client: OkHttpClient,
-            cls: Class<*>,
-        ): Any {
-            return Retrofit.Builder()
-                .baseUrl(url)
-                .addConverterFactory(GsonConverterFactory.create())
-                .client(client)
-                .build()
-                .create(cls)
-        }
+//        private fun createApi(
+//            url: String,
+//            client: OkHttpClient,
+//            cls: Class<*>,
+//        ): Any {
+//            return Retrofit.Builder()
+//                .baseUrl(url)
+//                .addConverterFactory(GsonConverterFactory.create())
+//                .client(client)
+//                .build()
+//                .create(cls)
+//        }
+
 
         private inline fun <reified T : Any> createApi(
             url: String,

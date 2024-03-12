@@ -48,17 +48,17 @@ class WeatherScreenViewModel @Inject constructor(
 
     private fun weatherDataMapper(weatherData: WeatherData): WeatherUIModel {
         val main = WeatherUIModel.Main(
-            humidity = weatherData.main.humidity,
-            pressure = weatherData.main.pressure,
-            temp = celsiusConversion(weatherData.main.temp),
-            tempMax = celsiusConversion(weatherData.main.tempMax),
-            tempMin = celsiusConversion(weatherData.main.tempMin)
+            humidity = weatherData.main?.humidity?:0,
+            pressure = weatherData.main?.pressure?:0,
+            temp = celsiusConversion(weatherData.main?.temp?:0.0),
+            tempMax = celsiusConversion(weatherData.main?.tempMax?:0.0),
+            tempMin = celsiusConversion(weatherData.main?.tempMin?:0.0)
         )
-        val weatherList = weatherData.weather.map {
+        val weatherList = weatherData.weather?.map {
             WeatherUIModel.Weather(
-                description = it.description,
-                icon = it.icon,
-                main = it.main,
+                description = it?.description?:"",
+                icon = it?.icon?:"",
+                main = it?.main,
             )
         }
 

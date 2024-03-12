@@ -52,9 +52,9 @@ fun WeatherScreen(viewModel: WeatherScreenViewModel) {
         if (selectedCity != null) {
             Column(modifier = Modifier.padding(20.dp)) {
                 Text(text = "도시 이름 = ${selectedCity.name}")
-                Text(text = "습도 = ${selectedCity.main.humidity}%")
-                Text(text = "온도 = ${selectedCity.main.temp}")
-                Text(text = "날씨 = ${selectedCity.weather.first().main}")
+                Text(text = "습도 = ${selectedCity.main?.humidity}%")
+                Text(text = "온도 = ${selectedCity.main?.temp}")
+                Text(text = "날씨 = ${selectedCity.weather?.first()?.main}")
             }
         }
     }

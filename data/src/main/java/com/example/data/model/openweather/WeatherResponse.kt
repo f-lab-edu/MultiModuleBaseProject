@@ -1,13 +1,13 @@
 package com.example.data.model.openweather
 
 
-import com.example.domain.model.openweather.WeatherData
+//import com.example.domain.model.openweather.WeatherData
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 // TODO response data class는 일반적으로 DTO로 쓰이지 않나? 굳이 또 붙여줘야하나? VO 나 DAO 도 네이밍을 붙이나? 안 붙일꺼면 DTO도 빼자.
 @Serializable
-data class WeatherResponseDTO(
+data class WeatherResponse(
     @SerialName("base")
     val base: String,
 
@@ -119,24 +119,24 @@ data class WeatherResponseDTO(
         val speed: Double
     )
 }
-
-internal fun WeatherResponseDTO.toDomain() = WeatherData(
-    name = name,
-    main = main.toDomain(),
-    weather = weather.map { it.toDomain() }
-
-)
-internal fun WeatherResponseDTO.Main.toDomain() = WeatherData.Main(
-    humidity = humidity,
-    pressure = pressure,
-    temp = temp,
-    tempMax = tempMax,
-    tempMin = tempMin
-)
-
-internal fun WeatherResponseDTO.Weather.toDomain() = WeatherData.Weather(
-    description = description,
-    icon = icon,
-    id = id,
-    main = main
-)
+//
+//internal fun WeatherResponseDTO.toDomain() = WeatherData(
+//    name = name,
+//    main = main.toDomain(),
+//    weather = weather.map { it.toDomain() }
+//
+//)
+//internal fun WeatherResponseDTO.Main.toDomain() = WeatherData.Main(
+//    humidity = humidity,
+//    pressure = pressure,
+//    temp = temp,
+//    tempMax = tempMax,
+//    tempMin = tempMin
+//)
+//
+//internal fun WeatherResponseDTO.Weather.toDomain() = WeatherData.Weather(
+//    description = description,
+//    icon = icon,
+//    id = id,
+//    main = main
+//)

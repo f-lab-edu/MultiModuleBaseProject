@@ -17,12 +17,15 @@ kotlin {
     jvmToolchain(17)
 }
 dependencies {
-    implementation(project(Project.domain))
 
     implementation(Dep.Kotlin.serializationJson)
 
     implementation(Dep.Hilt.hilt)
     kapt(Dep.Hilt.compiler)
+    debugImplementation(Dep.Flipper.core)
+    debugImplementation(Dep.Flipper.soloader)
+    debugImplementation(Dep.Flipper.networkplugin)
+    releaseImplementation(Dep.Flipper.noop)
 
     Dep.Retrofit.RetrofitList.forEach(::implementation)
     implementation(Dep.Google.gson)

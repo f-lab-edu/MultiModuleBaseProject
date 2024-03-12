@@ -85,4 +85,13 @@ object Dep{
         const val compiler = "com.google.dagger:hilt-android-compiler:$hiltVersion"
         const val plugin = "com.google.dagger:hilt-android-gradle-plugin:$hiltVersion"
     }
+
+    object Flipper{
+        const val core = "com.facebook.flipper:flipper:0.249.0"
+        const val soloader = "com.facebook.soloader:soloader:0.10.5"
+        const val networkplugin = "com.facebook.flipper:flipper-network-plugin:0.249.0"
+        const val noop = "com.facebook.flipper:flipper-noop:0.249.0"
+    }
+
+    const val timber = "com.jakewharton.timber:timber:5.0.1"
 }
