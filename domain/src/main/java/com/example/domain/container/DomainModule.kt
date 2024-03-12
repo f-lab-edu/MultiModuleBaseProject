@@ -5,6 +5,6 @@ import com.example.domain.usecase.openweather.FetchWeatherByCityWithoutHiltUseCa
 
 object DomainModule {
     val fetchWeatherByCityUseCase : FetchWeatherByCityWithoutHiltUseCase by lazy {
-        FetchWeatherByCityWithoutHiltUseCase(DataModuleWithoutHilt.weatherRepository)
+        FetchWeatherByCityWithoutHiltUseCase(DataModuleWithoutHilt.provideWeatherRepository)
     }
 }

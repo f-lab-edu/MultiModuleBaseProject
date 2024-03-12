@@ -9,6 +9,7 @@ import com.example.domain.model.openweather.WeatherData
 import com.example.domain.usecase.openweather.FetchWeatherByCityWithoutHiltUseCase
 import com.example.domain.usecase.utils.successOr
 import kotlinx.coroutines.launch
+import timber.log.Timber
 
 class WeatherScreenWithoutHiltViewModel(
     private val fetchWeatherByCityWithoutHiltUseCase: FetchWeatherByCityWithoutHiltUseCase
@@ -22,7 +23,7 @@ class WeatherScreenWithoutHiltViewModel(
     fun fetchWeather(city:String){
         viewModelScope.launch {
             _weatherData.value = fetchWeatherByCityWithoutHiltUseCase(city).successOr(null)
-            Log.d("sjh","data = ${weatherData.value}")
+            Timber.d("data = ${weatherData.value}")
         }
     }
 

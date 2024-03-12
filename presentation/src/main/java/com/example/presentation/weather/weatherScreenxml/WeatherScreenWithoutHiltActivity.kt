@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import com.example.presentation.R
 import com.example.presentation.databinding.ActivityWeatherScreenWithoutHiltBinding
 import com.example.presentation.weather.container.UIModule
+import timber.log.Timber
 
 class WeatherScreenWithoutHiltActivity : AppCompatActivity() {
 
@@ -34,7 +35,7 @@ class WeatherScreenWithoutHiltActivity : AppCompatActivity() {
                 id: Long
             ) {
                 val selectedCity = parent?.getItemAtPosition(position).toString()
-                Log.d("sjh","selected = $selectedCity")
+                Timber.d("selected = $selectedCity")
 
                 viewModel.fetchWeather(selectedCity)
             }
